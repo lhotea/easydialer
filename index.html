@@ -18,6 +18,7 @@
 <script src="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script>
 <script src="cordova.js"></script>
 <script src="clipboard.js"></script>
+<script src="dialer.js"></script>
 </head>
 
 <body>
@@ -81,8 +82,16 @@
 			}
 			function copyanddial(blah) {
 			    window.plugins.clipboard.copy(blah)
-				document.location.href="tel:"
-			    window.plugins.clipboard.paste()
+				phonedialer.dial(
+  blah, 
+  function(err) {
+    if (err == "empty") alert("Unknown phone number");
+    else alert("Dialer Error:" + err);    
+  },
+  function(success) { alert('Dialing succeeded'); }
+ )
+//				document.location.href="tel:"
+//			    window.plugins.clipboard.paste()
 
 			}
 
