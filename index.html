@@ -75,7 +75,7 @@
 
 function dial(myNumber) {
         alert("dialing " + myNumber);
-		phonedialer.dial(
+		window.plugins.phonedialer.dial(
   myNumber, 
   function(err) {
     if (err == "empty") alert("Unknown phone number");
