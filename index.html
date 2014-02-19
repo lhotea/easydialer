@@ -37,6 +37,9 @@
 		<a id="conf call upc Arnaud" onclick="dial('+41445750000,,62125#74123#')">Conf Call UPC Arnaud</a>
 </li>
 <li data-form="ui-body-a" data-swatch="a" data-theme="a" class="ui-li-static ui-body-a">
+		<a id="conf call upc Arnaud" onclick="dial('0445750000')">Test Arnaud</a>
+</li>
+<li data-form="ui-body-a" data-swatch="a" data-theme="a" class="ui-li-static ui-body-a">
 		<a id="conf call upc" href="tel:+41445750000">Conf Call UPC</a>
 </li>
 <li data-form="ui-body-a" data-swatch="a" data-theme="a" class="ui-li-static ui-body-a">
@@ -74,15 +77,17 @@
 		]
 
 function dial(myNumber) {
-        alert("dialing " + myNumber);
+        alert("dialing " + myNumber)
 		phonedialer.dial(
   myNumber, 
   function(err) {
-    if (err == "empty") alert("Unknown phone number");
-    else alert("Dialer Error:" + err);    
+    if (err == "empty") 
+	 alert("Unknown phone number")
+    else 
+	 alert("Dialer Error:" + err)    
   },
-  function(success) { alert('Dialing succeeded'); }
- );
+  function(success) { alert('Dialing succeeded') }
+ )
  }
 			function showFull() {
 				var blah = addPrefix($("#shortCode").val())
