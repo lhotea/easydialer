@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>EasyDialer</title>
+
+
+    <!-- web app /-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="shortcut icon" sizes="196x196" href="icon-196x196.png">
+    <link rel="apple-touch-icon" sizes="196x196" href="icon-196x196.png">
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a" >
+<div data-role="header">Easy Dialer</div> 
+	<div data-role="content">
+<div data-theme="a" data-form="ui-body-a" class="ui-body ui-body-a ui-corner-all">
+    <p>Enter your short code:</p>
+	<input data-theme="a" class="input" data-form="ui-body-a" type="number" id="shortCode" /><br/>
+	<button name="call" id="call"  class="ui-btn ui-shadow ui-corner-all" onclick="showFull();">call</button>
+</div>
+
+<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">	
+<li data-role="list-divider" data-theme="a" data-swatch="a" data-form="ui-bar-a" role="heading" class="ui-li-divider ui-bar-a ui-first-child">
+		Your favorite Numbers
+</li>
+
+<li data-form="ui-body-a" data-swatch="a" data-theme="a" class="ui-li-static ui-body-a">
+		<a id="conf call upc Arnaud" href="tel:+41445750000;62125#,74123#">Conf Call UPC Arnaud</a>
+</li>
+<li data-form="ui-body-a" data-swatch="a" data-theme="a" class="ui-li-static ui-body-a">
+		<a id="conf call upc" href="tel:+41445750000">Conf Call UPC</a>
+</li>
+<li data-form="ui-body-a" data-swatch="a" data-theme="a" class="ui-li-static ui-body-a">
+		<a id="conf call lgi" href="tel:+31207757222">Conf Call LGI</a>
+</li>
+</ul>
+
+</div>
+</div> 
+
+	<div data-role="footer">Arnaud</div>
+	<script type="text/javascript">
+		var prefixes = [{
+				prefix: '+4144277',
+				min: 9000,
+				max: 9999
+			}, {
+				prefix: '+4143343',
+				min: 6000,
+				max: 6999
+			}, {
+				prefix: '+4143497',
+				min: 5000,
+				max: 5999
+			}, {
+				prefix: '+4143488',
+				min: 7000,
+				max: 7999
+			}, {
+				prefix: '+312077',
+				min: 80000,
+				max: 89999
+			}
+
+		]
+
+			function showFull() {
+				var blah = addPrefix($("#shortCode").val())
+				//$("#fullNumber").html("<a href=\"tel:" + blah + "\">" + blah + "</a>")
+                                document.location.href="tel:" + blah
+			}
+
+			function addPrefix(shortCode) {
+				var blah = "not found"
+				for (var i = 0; i < prefixes.length; i++) {
+					var prefix = prefixes[i]
+					console.log("testing " + prefix.prefix)
+					if (prefix.min <= shortCode && shortCode <= prefix.max) {
+						blah = "".concat(prefix.prefix, shortCode)
+						break
+					}
+				}
+
+				return blah
+			}
+	</script>
+</body>
+
+</html>
