@@ -87,7 +87,8 @@ function dial(myNumber) {
 			function showFull() {
 				var blah = addPrefix($("#shortCode").val())
 				//$("#fullNumber").html("<a href=\"tel:" + blah + "\">" + blah + "</a>")
-                                document.location.href="tel:" + blah
+                //                document.location.href="tel:" + blah
+				dial(blah)
 			}
 
 			function addPrefix(shortCode) {
