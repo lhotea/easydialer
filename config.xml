@@ -19,6 +19,5 @@
 <gap:platform name="android" />
 <preference name="phonegap-version" value="3.1.0" />
 <preference name="fullscreen" value="true" />
-<preference name="orientation" value="landscape" />
 
 </widget>
