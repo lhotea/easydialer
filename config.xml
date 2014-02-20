@@ -21,6 +21,7 @@
 <preference name="fullscreen" value="true" />
 <gap:plugin name="com.verso.cordova.clipboard" />
 <gap:plugin name="com.teamnemitoff.phonedialer" />
+<gap:plugin name="org.apache.cordova.device" />
 <icon src="icon-196x196.png" />
 
 </widget>
