@@ -85,6 +85,9 @@
                                 copyanddial(blah)
 			}
 			function copyanddial(blah) {
+			    if ( device.platform == "iPhone" ) {
+			    	blah.replace(/%23/g,"#")
+			    }
 			    window.plugins.clipboard.copy(blah)
 				phonedialer.dial(
   blah, 
