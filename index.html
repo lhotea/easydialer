@@ -85,8 +85,8 @@
                                 copyanddial(blah)
 			}
 			function copyanddial(blah) {
-			    alert(device.platform)
-			    if ( device.platform == "iPhone" ) {
+			    //alert(device.platform)
+			    if ( device.platform == "iOS" ) {
 			    	blah = blah.replace(/%23/g,"#")
 			    }
 			    window.plugins.clipboard.copy(blah)
