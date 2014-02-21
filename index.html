@@ -85,6 +85,7 @@
                                 copyanddial(blah)
 			}
 			function copyanddial(blah) {
+			    alert(device.platform)
 			    if ( device.platform == "iPhone" ) {
 			    	blah = blah.replace(/%23/g,"#")
 			    }
